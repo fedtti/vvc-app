@@ -23,7 +23,7 @@ try {
   </script>
   <!--
   --------------------------------------------------
-    Vivocha Interaction App ${packages.app.version}
+    Vivocha Interaction Application ${packages.app.version}
     interaction-core: ${packages.core.version}
     interaction-layout: ${packages.layout.version}
     built: ${today}

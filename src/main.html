@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vivocha Interaction Application</title>
     <script>
-      var l = document.createElement('link');
+      const l = document.createElement('link');
       l.setAttribute('rel', 'stylesheet');
       l.setAttribute('href', 'main.css' + location.search);
       document.head.appendChild(l);
-      var beepmp3 = './assets/static/beep.mp3';
-      var VVC_VAR_ASSETS = __VARIABLES__;
+      const beepmp3 = './assets/static/beep.mp3';
+      const VVC_VAR_ASSETS = __VARIABLES__;
     </script>
   </head>
   <body>
     <vvc-root></vvc-root>
-    <script type="text/javascript">
-      (function() {
+    <script>
+      (() => {
         function push(scripts) {
           if (scripts.length > 0) {
             var script = scripts.shift();
             var head = document.getElementsByTagName('head')[0];
             var t = document.createElement("script");
-            t.type="text/javascript";
-            t.src=script.src;
+            t.src = script.src;
 
             if (script.attrs) {
               for(var attr in script.attrs) {
@@ -57,7 +56,7 @@
             acct = hashParts[1];
             host = hashParts[2];
           }
-          if (busId && acct && host) {
+          if (!!busId && !!acct && !!host) {
             scripts.unshift({ src: "https://"+host+"/a/"+acct+"/js/vivocha_interaction.js" });
             push(scripts);
           } else {
